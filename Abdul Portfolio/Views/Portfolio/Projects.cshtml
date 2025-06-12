@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "My Projects";
+}
+
+<section class="container py-5 text-white" style="background-color: #0d0d0d;">
+    <h2 class="text-center mb-4" style="color: #b200ff;">My Projects</h2>
+
+    <div class="row g-4">
+        @foreach (var project in new[] {
+        new {
+        Title = "E-Library API",
+        ImageUrl = Url.Content("~/images/p2.jpg"),
+        Description = "An e-library API that a user is able to manage books",
+        Tech = new[] { "#" },
+        CodeUrl = "#",
+        LiveDemoUrl = "#"
+        },
+        new {
+        Title = "Poultry Automation System",
+        ImageUrl = Url.Content("~/images/p3.jpg"),
+        Description = "An IoT-based poultry system for automated monitoring and control.",
+        Tech = new[] { "Node.js", "Python", "React.js", "GraphQL", "Cloudinary" },
+        CodeUrl = "#",
+        LiveDemoUrl = "#"
+        },
+        new {
+        Title = "Besmooth Int'l Music",
+        ImageUrl = Url.Content("~/images/p1.jpg"),
+        Description = "A music school platform with Firebase authentication and online lessons.",
+        Tech = new[] { "TypeScript", "Next.js", "Firebase", "Tailwind CSS" },
+        CodeUrl = "#",
+        LiveDemoUrl = "#"
+        }
+        })
+        {
+            <div class="col-md-4">
+                <div class="card h-100 bg-dark text-white border-light">
+                    <img src="@project.ImageUrl" class="card-img-top" alt="@project.Title" />
+                    <div class="card-body">
+                        <h5 class="card-title text-purple">@project.Title</h5>
+                        <div class="mb-2">
+                            @foreach (var tech in project.Tech)
+                            {
+                                <span class="badge bg-secondary me-1 mb-1">@tech</span>
+                            }
+                        </div>
+                        <p class="card-text">@project.Description</p>
+                        <div>
+                            <a href="@project.CodeUrl" class="btn btn-sm btn-outline-light me-2">Code</a>
+                            <a href="@project.LiveDemoUrl" class="btn btn-sm btn-purple">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

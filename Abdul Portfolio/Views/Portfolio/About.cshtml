@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "About Me";
+}
+
+<section class="container py-5 text-white" style="background-color: #0d0d0d;">
+    <h2 class="text-center mb-4" style="color: #b200ff;">About Me</h2>
+    <p class="lead text-center text-light">
+        Hello! I’m Abdullahi Ohiare, a backend-focused developer specializing in C# and ASP.NET Core. I enjoy designing and building scalable, secure, and efficient web applications, APIs, and enterprise-level solutions..
+        <br /><br />
+        I have a good foundation in clean architecture, Entity Framework Core, RESTful APIs, and authentication/authorization systems. I’m currently diving deeper into DevOps practices and cloud services like Azure to expand my full-stack capabilities.
+
+        Outside of coding, I’m passionate about tech communities, mentorship, and sharing knowledge. I also enjoy exploring new tools, listening to podcasts, and sometimes unwinding with strategy games or creative writing.
+
+        Let’s connect and build something meaningful together!
+    </p>
+
+    <div class="mt-5 p-4 rounded" style="background-color: #161616;">
+        <h5 class="text-purple fw-bold mb-3">Core Skills</h5>
+        <div>
+            @foreach (var skill in new[] {
+            "C#", "JavaScript", "CSS", "HTML", "Node.js", "Express.js",
+            "SQL", "REST APIs", 
+            })
+       
+            {
+                <span class="badge bg-secondary me-2 mb-2">@skill</span>
+            }
+        </div>
+    </div>
+</section>
