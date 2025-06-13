@@ -1,4 +1,4 @@
-namespace Abdul_Portfolio
+﻿namespace Abdul_Portfolio
 {
     public class Program
     {
@@ -11,15 +11,18 @@ namespace Abdul_Portfolio
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // Production-safe pipeline
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                // Use a generic error handler route
+                app.UseExceptionHandler("/Portfolio/Error");
+                // Skip HSTS for now to avoid HTTPS complications
+                // app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // 🚫 Commented out HTTPS redirection to prevent site can't be reached error
+            // app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
